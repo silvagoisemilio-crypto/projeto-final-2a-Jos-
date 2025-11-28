@@ -1,127 +1,138 @@
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native";
+// app/index.js
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 
-export default function Inicio() {
+export default function Index() {
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 40 }}>
-      
-      {/* HERO */}
-      <View style={styles.hero}>
-        <Text style={styles.heroTitle}>Projeto de Desenvolvimento Web</Text>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#f6f7fb" }}>
+      <ScrollView contentContainerStyle={styles.container} style={{ flex: 1 }}>
+        <Text style={styles.title}>Bem-vindo 👋</Text>
 
-        <Text style={styles.heroText}>
-          Este projeto foi desenvolvido com o objetivo de criar uma experiência 
-          interativa utilizando HTML, CSS e JavaScript. Ele aborda dois temas 
-          complementares: Engenharia Automotiva (tema obrigatório) e a adrenalina 
-          da Fórmula 1 (tema livre). O foco é apresentar conceitos, componentes 
-          e curiosidades do universo automotivo de forma visual e acessível.
+        <Text style={styles.description}>
+          Esta landing page foi criada para apresentar, de forma simples e visual,
+          tudo o que você precisa saber sobre carros, Fórmula 1 e muito mais.
+          Aproveite o conteúdo e navegue pelas páginas usando a barra inferior.
         </Text>
-      </View>
-
-      {/* CARDS */}
-      <View style={styles.cardsContainer}>
 
         {/* CARD 1 */}
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Tema Obrigatório: Carros</Text>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>Carro</Text>
+          </View>
+
           <Text style={styles.cardText}>
-            Explore o funcionamento interno de um veículo: motor, suspensão, direção,
-            eletrônica, carroceria e muito mais. Interaja com os componentes e veja
-            informações detalhadas.
+            Nesta seção você vai descobrir como um carro realmente funciona.
+            Vamos explorar estrutura, motor, transmissão, freios, suspensão,
+            direção, sistema elétrico e muito mais — tudo explicado de forma
+            simples e visual.
           </Text>
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Explorar Engenharia Automotiva</Text>
-          </TouchableOpacity>
-        </View>   
-        {/* CARD 2 */}
-        <View style={[styles.card, styles.cardAccent]}>
-          <Text style={[styles.cardTitle, styles.accentText]}>Tema Livre: Fórmula 1</Text>
-          <Text style={styles.cardText}>
-            A Fórmula 1 representa o ápice da velocidade, tecnologia e engenharia.
-            Descubra aerodinâmica, pneus, estratégias de corrida e o que torna esses carros tão rápidos.
-          </Text>
-
-          <TouchableOpacity style={[styles.button, styles.buttonAccent]}>
-            <Text style={[styles.buttonText, styles.accentText]}>Conhecer a Fórmula 1</Text>
+            <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
         </View>
 
-      </View>
+        {/* CARD 2 */}
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>F1</Text>
+          </View>
 
-    </ScrollView>
+          <Text style={styles.cardText}>
+            Aqui você vai entrar no mundo da Fórmula 1: como funcionam os carros
+            mais rápidos do planeta, curiosidades sobre aerodinâmica, estratégia,
+            pneus, boxes, motores híbridos e tecnologias que nasceram nas pistas
+            e vieram para os carros de rua.
+          </Text>
+
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Entrar</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* ESPAÇO PARA TAB BAR */}
+        <View style={{ height: 120 }} />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#0A0A0A",
-  },
-
-  /* HERO */
-  hero: {
-    padding: 24,
-    backgroundColor: "#111",
-    marginBottom: 20,
-  },
-  heroTitle: {
-    color: "#e8e8e8",
-    fontSize: 26,
-    fontWeight: "700",
-    marginBottom: 10,
-  },
-  heroText: {
-    color: "#c5c5c5",
-    fontSize: 16,
-    lineHeight: 22,
-  },
-
-  /* CARDS */
-  cardsContainer: {
-    paddingHorizontal: 20,
-  },
-  card: {
-    backgroundColor: "#1a1a1a",
-    padding: 18,
-    borderRadius: 14,
-    marginBottom: 20,
-  },
-  cardAccent: {
-    borderColor: "#00A6FB",
-    borderWidth: 2,
-  },
-  cardTitle: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "700",
-    marginBottom: 8,
-  },
-  cardText: {
-    color: "#cfcfcf",
-    fontSize: 15,
-    lineHeight: 20,
-    marginBottom: 16,
-  },
-
-  /* BOTÕES */
-  button: {
-    borderWidth: 1,
-    borderColor: "#fff",
-    paddingVertical: 10,
-    borderRadius: 8,
+    paddingTop: 40,
+    paddingHorizontal: 25,
     alignItems: "center",
   },
-  buttonAccent: {
-    borderColor: "#00A6FB",
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 15,
-    fontWeight: "600",
+
+  title: {
+    fontSize: 36,
+    fontWeight: "800",
+    marginBottom: 12,
+    color: "#1a1a1a",
+    textAlign: "center",
   },
 
-  /* TEXTOS ACENTUADOS */
-  accentText: {
-    color: "#00A6FB",
+  description: {
+    fontSize: 15,
+    textAlign: "center",
+    lineHeight: 22,
+    marginBottom: 28,
+    color: "#444",
+    paddingHorizontal: 8,
+  },
+
+  card: {
+    width: "100%",
+    backgroundColor: "#ffffff",
+    padding: 22,
+    borderRadius: 22,
+    marginBottom: 22,
+    shadowColor: "#000",
+    shadowOpacity: 0.08,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 6,
+    elevation: 4,
+  },
+
+  cardHeader: {
+    width: "100%",
+    marginBottom: 12,
+  },
+
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#2a3d78",
+  },
+
+  cardText: {
+    textAlign: "left",
+    fontSize: 14,
+    marginBottom: 18,
+    color: "#555",
+    lineHeight: 20,
+  },
+
+  button: {
+    alignSelf: "center",
+    width: "75%",
+    backgroundColor: "#ff4141",
+    paddingVertical: 12,
+    borderRadius: 30,
+    elevation: 3,
+  },
+
+  buttonText: {
+    textAlign: "center",
+    color: "#fff",
+    fontWeight: "700",
+    fontSize: 16,
   },
 });

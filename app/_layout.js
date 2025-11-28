@@ -1,7 +1,8 @@
-import { Tabs } from 'expo-router';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'; // Importando MaterialCommunityIcons para o ícone de motor
+// app/_layout.js
+import React from "react";
+import { Tabs } from "expo-router";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 export default function Layout() {
   return (
@@ -9,14 +10,14 @@ export default function Layout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "black", // cor de fundo do tab bar
-          borderTopColor: "transparent", // remove a borda superior
-          elevation: 10, // adiciona sombra no Android
-          height: 60, // altura do tab bar
-          paddingBottom: 5, // espaçamento inferior
+          backgroundColor: "black",
+          borderTopColor: "transparent",
+          elevation: 10,
+          height: 60,
+          paddingBottom: 5,
         },
-        tabBarActiveTintColor: "#ff6600b4", // cor dos ícones ativos
-        tabBarInactiveTintColor: "#ffffff60", // cor dos ícones inativos
+        tabBarActiveTintColor: "#ff6600b4",
+        tabBarInactiveTintColor: "#ffffff60",
       }}
     >
       <Tabs.Screen
@@ -40,7 +41,7 @@ export default function Layout() {
         options={{
           title: "obrigatorio",
           headerShown: false,
-          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="engine" size={24} color={color} />, // Ícone de motor
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="engine" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
@@ -48,7 +49,7 @@ export default function Layout() {
         options={{
           title: "livre",
           headerShown: false,
-          tabBarIcon: ({ color }) => <FontAwesome name="car" size={24} color={color} />, // Ícone de carro de corrida (Fórmula 1)
+          tabBarIcon: ({ color }) => <FontAwesome name="car" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
