@@ -11,13 +11,13 @@ import {
 
 export default function Index() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#f6f7fb" }}>
-      <ScrollView contentContainerStyle={styles.container} style={{ flex: 1 }}>
+    <SafeAreaView style={styles.screen}>
+      <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>Bem-vindo 👋</Text>
 
         <Text style={styles.description}>
           Esta landing page foi criada para apresentar, de forma simples e visual,
-          tudo o que você precisa saber sobre carros, Fórmula 1 e muito mais.
+          tudo o que você precisa saber sobre carros, Fórmula 1 e muito mais de uma forma futuristica.
           Aproveite o conteúdo e navegue pelas páginas usando a barra inferior.
         </Text>
 
@@ -57,14 +57,21 @@ export default function Index() {
           </TouchableOpacity>
         </View>
 
-        {/* ESPAÇO PARA TAB BAR */}
+        {/* Espaço para não cobrir a TabBar */}
         <View style={{ height: 120 }} />
       </ScrollView>
     </SafeAreaView>
   );
 }
 
+/* ----------------  ESTILOS FUTURISTAS  ---------------- */
+
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: "#0a0f1f", // fundo futurista azul escuro
+  },
+
   container: {
     paddingTop: 40,
     paddingHorizontal: 25,
@@ -75,8 +82,10 @@ const styles = StyleSheet.create({
     fontSize: 36,
     fontWeight: "800",
     marginBottom: 12,
-    color: "#1a1a1a",
     textAlign: "center",
+    color: "#6bc1ff", // azul neon
+    textShadowColor: "#00aaff",
+    textShadowRadius: 12,
   },
 
   description: {
@@ -84,55 +93,62 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 22,
     marginBottom: 28,
-    color: "#444",
     paddingHorizontal: 8,
+    color: "#b3d9ff",
   },
 
   card: {
     width: "100%",
-    backgroundColor: "#ffffff",
+    backgroundColor: "rgba(20, 25, 45, 0.7)",
     padding: 22,
     borderRadius: 22,
     marginBottom: 22,
-    shadowColor: "#000",
-    shadowOpacity: 0.08,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 6,
-    elevation: 4,
+    borderWidth: 1,
+    borderColor: "rgba(0, 180, 255, 0.4)", // borda neon
+    shadowColor: "#00c8ff",
+    shadowOpacity: 0.3,
+    shadowRadius: 15,
+    shadowOffset: { width: 0, height: 0 },
   },
 
   cardHeader: {
-    width: "100%",
     marginBottom: 12,
   },
 
   cardTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "700",
-    color: "#2a3d78",
+    color: "#7cd6ff",
+    textShadowColor: "#009dff",
+    textShadowRadius: 10,
   },
 
   cardText: {
     textAlign: "left",
     fontSize: 14,
     marginBottom: 18,
-    color: "#555",
+    color: "#d0e9ff",
     lineHeight: 20,
   },
 
   button: {
     alignSelf: "center",
     width: "75%",
-    backgroundColor: "#ff4141",
+    backgroundColor: "#ff0054",
     paddingVertical: 12,
     borderRadius: 30,
-    elevation: 3,
+    shadowColor: "#ff2b75",
+    shadowRadius: 12,
+    shadowOpacity: 0.7,
+    shadowOffset: { width: 0, height: 0 },
+    borderWidth: 1,
+    borderColor: "#ff4b8c",
   },
 
   buttonText: {
     textAlign: "center",
     color: "#fff",
-    fontWeight: "700",
+    fontWeight: "800",
     fontSize: 16,
   },
 });
